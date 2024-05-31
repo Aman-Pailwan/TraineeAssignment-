@@ -1,0 +1,3 @@
+I have reviewed the problem statement regarding the development of an eBPF program to drop TCP packets on a specified port (defaulting to 4040) and making the port number configurable from userspace.
+
+While I am not currently familiar with eBPF technology, I am eager to learn and work on this task
