@@ -1,0 +1,14 @@
+1) Buffered Channels (make(chan func(), 10)):
+  Useful for managing a queue of tasks or functions that need to be executed, especially when you want to limit the number of tasks waiting to be processed.
+2) Goroutines (go func() { ... }()):
+  Enable concurrent execution of tasks without blocking the main thread.
+
+Q3) Significance of the For Loop with 4 Iterations
+    The loop with 4 iterations creates 4 worker goroutines. This is significant because it sets up a pool of 4 workers that can concurrently process tasks (functions) sent to the cnp channel.
+
+Q4)Significance of make(chan func(), 10)
+  The buffered channel with a capacity of 10 allows up to 10 functions to be enqueued without blocking the sender.
+
+Q5)Why "HERE1" is Not Getting Printed?
+    Race Condition and Timing: The line fmt.Println("Hello") is executed immediately after the function is sent to the channel, potentially before any of the goroutines have a chance to receive and execute the function from the channel.
+    Main Goroutine Exit: The main function might exit before the worker goroutines get a chance to execute the function from the channel
